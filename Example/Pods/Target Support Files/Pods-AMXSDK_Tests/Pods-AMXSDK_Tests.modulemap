@@ -1,0 +1,6 @@
+framework module Pods_AMXSDK_Tests {
+  umbrella header "Pods-AMXSDK_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

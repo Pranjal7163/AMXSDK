@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24F9106AB2EC1E48E2CED740 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		24F9106AB2EC1E48E2CED740 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		40FA7B50E128D77754473494 /* Pods-AMXSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMXSDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-AMXSDK_Tests/Pods-AMXSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4AE805EE755E9C5BB4D5D678 /* Pods-AMXSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMXSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-AMXSDK_Example/Pods-AMXSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* AMXSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMXSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,9 +41,9 @@
 		607FACE51AFB9204008FA782 /* AMXSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMXSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		68E29AB2F508A0B4A14834C7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		68E29AB2F508A0B4A14834C7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		72E912699F45BCD7E8B2D98D /* Pods-AMXSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMXSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMXSDK_Tests/Pods-AMXSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		99B594EF87A0E0FF7D2DB7DA /* AMXSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AMXSDK.podspec; path = ../AMXSDK.podspec; sourceTree = "<group>"; };
+		99B594EF87A0E0FF7D2DB7DA /* AMXSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMXSDK.podspec; path = ../AMXSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B0C31B2F14D553C81FAF4C59 /* Pods-AMXSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMXSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-AMXSDK_Example/Pods-AMXSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B5B57F1FEEEACCC342E6950F /* Pods_AMXSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMXSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC5D3F3AE057FA85F7FD414B /* Pods_AMXSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMXSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +147,6 @@
 				72E912699F45BCD7E8B2D98D /* Pods-AMXSDK_Tests.debug.xcconfig */,
 				40FA7B50E128D77754473494 /* Pods-AMXSDK_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -228,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

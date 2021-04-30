@@ -1,0 +1,6 @@
+framework module AMXSDK {
+  umbrella header "AMXSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

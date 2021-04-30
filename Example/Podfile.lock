@@ -1,0 +1,27 @@
+PODS:
+  - AMXSDK (0.1.0)
+  - Nimble (8.0.9)
+  - Quick (2.2.1)
+
+DEPENDENCIES:
+  - AMXSDK (from `../`)
+  - Nimble (~> 8.0.7)
+  - Quick (~> 2.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  AMXSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AMXSDK: 2deb6684119d35efd002b6c415b3e74a78ab9778
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+
+PODFILE CHECKSUM: 8e81c9e551b0055e918972ac9d51500d99427d70
+
+COCOAPODS: 1.9.3
