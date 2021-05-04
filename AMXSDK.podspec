@@ -32,11 +32,15 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'AMXSDK/Classes/**/*'
   
+  s.static_framework = true
+  
   # s.resource_bundles = {
   #   'AMXSDK' => ['AMXSDK/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.dependency 'Firebase'
+   s.dependency 'Firebase/Core'
+   s.dependency 'Firebase/Messaging'
 end
