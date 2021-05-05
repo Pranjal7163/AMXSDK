@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         AMX(appDelegate: application).setKey(apiKey: "abcd")
         
         let count = UserDefaults.standard.integer(forKey: "count")
@@ -28,24 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             print("Count : NA")
         }
         
-        FirebaseApp.configure()
+        
         
         Messaging.messaging().delegate = self
-//        if #available(iOS 10.0, *) {
-//            let center = UNUserNotificationCenter.current()
-//            center.delegate = self
-//            center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-//                if granted {
-//                    DispatchQueue.main.async {
-//                        UIApplication.shared.registerForRemoteNotifications()
-//                    }
-//                } else {
-//                    print(error?.localizedDescription as Any)
-//                }
-//            }
-//        } else {
-//            // Fallback on earlier versions
-//        }
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
                 
         
         let token = Messaging.messaging().fcmToken
@@ -67,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         }
 
         application.registerForRemoteNotifications()
+        
+        AMX.setTracking()
         return true
     }
     
@@ -105,28 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         print("Unable to register for remote notifications: \(error.localizedDescription)")
       }
     
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-//
-//            // Print message ID.
-//            if let messageID = userInfo["gcm.message_id"] {
-//
-//                print("\n*** application - didReceiveRemoteNotification - fetchCompletionHandler - Message ID: \(messageID)")
-//            }
-//
-//            // Print full message.
-//            print("\n*** application - didReceiveRemoteNotification - full message - fetchCompletionHandler, userInfo: \(userInfo)")
-//
-//            myNotificationService?.processMessage(title: userInfo["Title"] as! String
-//                , text: userInfo["Text"] as! String, completion: { (success) in
-//
-//                    if success {
-//                        completionHandler(.newData)
-//                    }
-//                    else {
-//                        completionHandler(.noData)
-//                    }
-//            })
-//        }
+
 
       // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
       // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
@@ -173,11 +145,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                               willPresent notification: UNNotification,
     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     let userInfo = notification.request.content.userInfo
-
-    // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
-    
-    // Print full message.
     AMX.setNotifier(userInfo: userInfo)
     print(userInfo)
 
@@ -189,9 +156,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                               didReceive response: UNNotificationResponse,
                               withCompletionHandler completionHandler: @escaping () -> Void) {
     let userInfo = response.notification.request.content.userInfo
-    // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
-    // Print full message.
     AMX.setNotifier(userInfo: userInfo)
     print(userInfo)
 
@@ -207,8 +171,6 @@ extension AppDelegate : MessagingDelegate {
     
     let dataDict:[String: String] = ["token": fcmToken ?? ""]
     NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-    // TODO: If necessary send token to application server.
-    // Note: This callback is fired at each app startup and whenever a new token is generated.
   }
   // [END refresh_token]
 }

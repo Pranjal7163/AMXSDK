@@ -44,4 +44,5 @@ Pod::Spec.new do |s|
    s.dependency 'Firebase'
    s.dependency 'Firebase/Core'
    s.dependency 'Firebase/Messaging'
+   s.dependency 'Firebase/Database'
 end
